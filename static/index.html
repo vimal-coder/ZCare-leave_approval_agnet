@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZCare Leave AI Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/svg+xml" href="/static/logo.svg">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="brand-logo">
+                    <img src="/static/logo.svg" alt="ZCare Logo" class="logo-img">
+                    <div class="brand-text">
+                        <span class="brand-name">ZCARE</span>
+                        <span class="brand-tagline">HEALTHCARE SOLUTIONS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="title-row">
+                    <h1>ZCare Leave AI Assistant</h1>
+                    <span class="ai-badge">AI</span>
+                </div>
+                <p class="subtitle">Your intelligent assistant for leave management</p>
+            </div>
+
+            <div class="header-right">
+                <button class="btn-new-chat" id="new-chat-btn" type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span>New Chat</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <main class="chat-main">
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome message -->
+                <div class="message-row bot-row">
+                    <div class="avatar bot-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="10" rx="2"/>
+                            <circle cx="9" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                            <circle cx="15" cy="16" r="1.5" fill="currentColor" stroke="none"/>
+                            <path d="M12 11V7"/>
+                            <path d="M8 7h8"/>
+                            <circle cx="12" cy="4" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="message-group">
+                        <div class="bubble bot-bubble">
+                            <p>Hello! 👋 I'm your <strong>ZCare Leave Assistant</strong>.</p>
+                            <p class="bubble-gap">I can help you apply for leave, check your balance, and view your leave history.</p>
+                            <p class="bubble-gap">Tell me your employee ID and what you'd like to do — for example:</p>
+                            <p class="example-text">"I want to apply for leave from 20 May to 22 May for personal work."</p>
+                        </div>
+                        <span class="timestamp" id="welcome-time"></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input Footer -->
+        <footer class="chat-footer">
+            <div class="input-container">
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Type your message here..."
+                    autocomplete="off"
+                />
+                <button class="btn-send" id="send-btn" type="button" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                    </svg>
+                </button>
+            </div>
+            <p class="disclaimer">AI responses can make mistakes. Please verify important information.</p>
+        </footer>
+    </div>
+
+    <script src="/static/chat.js"></script>
+</body>
+</html>
