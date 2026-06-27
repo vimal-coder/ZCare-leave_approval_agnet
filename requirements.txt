@@ -4,13 +4,12 @@ uvicorn
 langchain
 langgraph
 langchain-google-genai
-google-generativeai
 
 sqlalchemy
 psycopg2-binary
 
 python-dotenv
-
+langchain-groq
 mcp
 jinja2
 python-multipart

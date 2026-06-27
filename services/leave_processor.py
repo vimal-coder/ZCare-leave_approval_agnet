@@ -98,8 +98,7 @@ def process_leave_request(
     if is_emergency:
         status = "AUTO_APPROVED"
         message = "Emergency leave automatically approved and recorded as an exception."
-        if available_balance >= total_days:
-            deduct_leave(employee_id, leave_type, total_days)
+        deduct_leave(employee_id, leave_type, total_days)
     elif available_balance < total_days:
         status = "LOP"
         message = (

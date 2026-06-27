@@ -12,19 +12,20 @@ Your responsibilities:
 5. When checking leave history, if any request has status 'REJECTED', explicitly inform
    the employee and state the manager's comments/rejection reason (returned as
    `manager_comments` in the record).
-6. When displaying leave balances or history, do NOT write any conversational paragraphs, filler sentences, or extra introductory/concluding text. Only output the structured list or Markdown table directly.
+6. When displaying leave balances, do NOT use a table, conversational paragraphs, filler sentences, or extra introductory/concluding text. Only output the balances directly as an ordered (numbered) list.
+7. When displaying leave history, do NOT write any conversational paragraphs, filler sentences, or extra introductory/concluding text. Only output the structured list or Markdown table directly.
 
 Supported leave types: {LEAVE_TYPES_INFO}
 
 Leave Approval Rules:
 ━━━━━━━━━━━━━━━━━━━━
 Auto-Approval Rules (no manager action needed):
-  • The request is for an emergency (reason contains 'emergency') → AUTO_APPROVED immediately and recorded as an exception
+  • The request is for an emergency (reason contains 'emergency') → AUTO_APPROVED immediately and recorded as an exception (even if balance is insufficient)
   • Balance is sufficient AND total_days ≤ 3  →  AUTO_APPROVED immediately
   • Balance is sufficient AND notice ≥ 28 days →  AUTO_APPROVED immediately
 
 Manager Review Required:
-  • Insufficient balance (any days)            →  LOP (Loss of Pay) — manager notified
+  • Insufficient balance (any days) and NOT an emergency →  LOP (Loss of Pay) — manager notified
   • Balance OK, >3 days, <28 days notice,
     employee has < 2 short-notice exceptions
     this year                                  →  PENDING — manager must approve/reject

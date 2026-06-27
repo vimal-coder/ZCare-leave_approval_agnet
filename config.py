@@ -47,6 +47,6 @@ SMTP_PORT = int(get_setting('email', 'SMTP_PORT', '587'))
 
 # App / LLM configuration
 APP_BASE_URL = get_setting('app', 'BASE_URL') or get_setting('app', 'APP_BASE_URL', 'http://127.0.0.1:8000')
-GROQ_API_KEY = get_setting('app', 'GROQ_API_KEY', '')
-GROQ_MODEL = get_setting('app', 'GROQ_MODEL', 'llama-3.3-70b-versatile')
+GROQ_API_KEY = os.getenv('GROQ_API_KEY')
+GROQ_MODEL = get_setting('app', 'GROQ_MODEL', 'llama-3.1-8b-instant')
 DEFAULT_MANAGER_EMAIL = get_setting('app', 'DEFAULT_MANAGER_EMAIL', 'manager@zcare.com')
