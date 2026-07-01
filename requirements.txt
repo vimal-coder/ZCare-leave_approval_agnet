@@ -13,6 +13,6 @@ langchain-groq
 mcp
 jinja2
 python-multipart
-
+sqlalchemy
 email-validator
 httpx
